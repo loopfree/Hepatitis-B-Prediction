@@ -14,7 +14,8 @@
 )
 
 (defrule CheckAntiHDV
-    ?d <- (Description (LabResults $?s HBsAg Positive $?f))
+    ?d <- (Description (LabResults $?y))
+    (Description (LabResults $?s HBsAg Positive $?f))
     (not (Description (LabResults $?l AntiHDV $?r)))
     =>
     (printout t "AntiHDV? ")
