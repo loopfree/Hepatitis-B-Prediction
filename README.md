@@ -18,7 +18,7 @@ B  -->|False| E(Hepatitis B+D)
 C  -->|True| F(anti-HBc = positive)
 C  -->|False| G(anti-HBc = positive)
 
-%% Height  3
+%% Height = 3
 D  -->|True| H(anti-HBs = positive)
 D  -->|False| I(Uncertain configuration)
 F  -->|True| J(Cured)
