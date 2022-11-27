@@ -5,7 +5,7 @@
 
 ; How to Run:
 ; (clear)
-; (load "hepatitis-b.clp")
+; (load "main.clp")
 ; (reset)
 ; (run)
 
@@ -43,8 +43,8 @@
     =>
     (printout t "HBsAg? ")
     (bind ?HBsAg (read))
-    (if (eq ?HBsAg Positive) then (modify ?d (LabResults $?y HBsAg Positive)))
-    (if (eq ?HBsAg Negative) then (modify ?d (LabResults $?y HBsAg Negative)))
+    (if (eq ?HBsAg positive) then (modify ?d (LabResults $?y HBsAg Positive)))
+    (if (eq ?HBsAg negative) then (modify ?d (LabResults $?y HBsAg Negative)))
 )
 
 ; ------------------------------------------------------------------ ;
@@ -58,8 +58,8 @@
     =>
     (printout t "anti-HDV? ")
     (bind ?AntiHDV (read))
-    (if (eq ?AntiHDV Positive) then (modify ?d (LabResults $?y AntiHDV Positive) (Diagnosis "Hepatitis B+D")))
-    (if (eq ?AntiHDV Negative) then (modify ?d (LabResults $?y AntiHDV Negative)))
+    (if (eq ?AntiHDV positive) then (modify ?d (LabResults $?y AntiHDV Positive) (Diagnosis "Hepatitis B+D")))
+    (if (eq ?AntiHDV negative) then (modify ?d (LabResults $?y AntiHDV Negative)))
 )
 
 (defrule CheckAntiHBs2
@@ -69,8 +69,8 @@
     =>
     (printout t "anti-HBs? ")
     (bind ?AntiHBs (read))
-    (if (eq ?AntiHBs Positive) then (modify ?d (LabResults $?y AntiHBs Positive)))
-    (if (eq ?AntiHBs Negative) then (modify ?d (LabResults $?y AntiHBs Negative)))
+    (if (eq ?AntiHBs positive) then (modify ?d (LabResults $?y AntiHBs Positive)))
+    (if (eq ?AntiHBs negative) then (modify ?d (LabResults $?y AntiHBs Negative)))
 )
 
 ; ------------------------------------------------------------------ ;
@@ -85,8 +85,8 @@
     =>
     (printout t "anti-HBc? ")
     (bind ?AntiHBc (read))
-    (if (eq ?AntiHBc Positive) then (modify ?d (LabResults $?y AntiHBc Positive)))
-    (if (eq ?AntiHBc Negative) then (modify ?d (LabResults $?y AntiHBc Negative) (Diagnosis "Uncertain configuration")))
+    (if (eq ?AntiHBc positive) then (modify ?d (LabResults $?y AntiHBc Positive)))
+    (if (eq ?AntiHBc negative) then (modify ?d (LabResults $?y AntiHBc Negative) (Diagnosis "Uncertain configuration")))
 )
 
 (defrule CheckAntiHBc2
@@ -97,8 +97,8 @@
     =>
     (printout t "anti-HBc? ")
     (bind ?AntiHBc (read))
-    (if (eq ?AntiHBc Positive) then (modify ?d (LabResults $?y AntiHBc Positive) (Diagnosis "Cured")))
-    (if (eq ?AntiHBc Negative) then (modify ?d (LabResults $?y AntiHBc Negative) (Diagnosis "Vaccinated")))
+    (if (eq ?AntiHBc positive) then (modify ?d (LabResults $?y AntiHBc Positive) (Diagnosis "Cured")))
+    (if (eq ?AntiHBc negative) then (modify ?d (LabResults $?y AntiHBc Negative) (Diagnosis "Vaccinated")))
 )
 
 (defrule CheckAntiHBc3
@@ -109,8 +109,8 @@
     =>
     (printout t "anti-HBc? ")
     (bind ?AntiHBc (read))
-    (if (eq ?AntiHBc Positive) then (modify ?d (LabResults $?y AntiHBc Positive) (Diagnosis "Unclear (possible resolved)")))
-    (if (eq ?AntiHBc Negative) then (modify ?d (LabResults $?y AntiHBc Negative) (Diagnosis "Healthy not vaccinated or suspicious")))
+    (if (eq ?AntiHBc positive) then (modify ?d (LabResults $?y AntiHBc Positive) (Diagnosis "Unclear (possible resolved)")))
+    (if (eq ?AntiHBc negative) then (modify ?d (LabResults $?y AntiHBc Negative) (Diagnosis "Healthy not vaccinated or suspicious")))
 )
 
 ; ------------------------------------------------------------------ ;
@@ -125,8 +125,8 @@
     =>
     (printout t "anti-HBs? ")
     (bind ?AntiHBs (read))
-    (if (eq ?AntiHBs Positive) then (modify ?d (LabResults $?y AntiHBs Positive) (Diagnosis "Uncertain configuration")))
-    (if (eq ?AntiHBs Negative) then (modify ?d (LabResults $?y AntiHBs Negative)))
+    (if (eq ?AntiHBs positive) then (modify ?d (LabResults $?y AntiHBs Positive) (Diagnosis "Uncertain configuration")))
+    (if (eq ?AntiHBs negative) then (modify ?d (LabResults $?y AntiHBs Negative)))
 )
 
 ; ------------------------------------------------------------------ ;
@@ -141,6 +141,6 @@
     =>
     (printout t "IgM anti-HBc? ")
     (bind ?IgMAntiHBc (read))
-    (if (eq ?IgMAntiHBc Positive) then (modify ?d (LabResults $?y IgMAntiHBc Positive) (Diagnosis "Acute infection")))
-    (if (eq ?IgMAntiHBc Negative) then (modify ?d (LabResults $?y IgMAntiHBc Negative) (Diagnosis "Chronic infection")))
+    (if (eq ?IgMAntiHBc positive) then (modify ?d (LabResults $?y IgMAntiHBc Positive) (Diagnosis "Acute infection")))
+    (if (eq ?IgMAntiHBc negative) then (modify ?d (LabResults $?y IgMAntiHBc Negative) (Diagnosis "Chronic infection")))
 )
